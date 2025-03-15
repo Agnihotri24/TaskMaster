@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List</title>
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Link JavaScript -->
+    <script src="script.js" defer></script>
+
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/b6b7079cb7.js" crossorigin="anonymous"></script>
+
+    <!-- Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+  </head>
+  <body>
+    <!-- Main Container -->
+    <div class="container">
+      <!-- Container for Starting Box -->
+      <div class="start-container">
+        <!-- For Details -->
+        <div class="details">
+          <h1>Task Master</h1>
+          <h6>Turn Your Goals into Achievements</h6>
+          <!-- Progress Bar -->
+          <div id="progress-bar">
+            <div id="progress"></div>
+          </div>
+        </div>
+        <!-- For Score Update -->
+        <div class="score">
+          <p>0/0</p>
+        </div>
+      </div>
+
+      <!-- Form for Input from User -->
+      <form>
+        <input type="text" id="textinput" placeholder="Write Your Task -" />
+        <button type="submit">+</button>
+      </form>
+
+      <!-- Unordered List for Tasks -->
+      <ul id="taskList"></ul>
+    </div>
+  </body>
+</html>
