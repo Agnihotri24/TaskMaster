@@ -16,7 +16,10 @@ const saveTask = () => {
   localStorage.setItem("task", JSON.stringify(task));
 };
 
+// Select Button
 const button = document.querySelector("button");
+
+// add Task on UI
 
 const addTask = () => {
   const textInput = document.getElementById("textinput");
@@ -31,6 +34,8 @@ const addTask = () => {
   saveTask();
 };
 
+// delete the Ui when user Click
+
 const deleteTask = (index) => {
   task.splice(index, 1);
   updateTask();
@@ -38,6 +43,7 @@ const deleteTask = (index) => {
   saveTask();
 };
 
+// edit the content 
 const editTask = (index) => {
   const taskInput = document.getElementById("textinput");
   taskInput.value = task[index].text;
@@ -45,12 +51,15 @@ const editTask = (index) => {
   deleteTask(index);
 };
 
+
 const toggleTask = (index) => {
   task[index].completed = !task[index].completed;
   updateTask();
   updateStatus();
   saveTask();
 };
+
+// update the status of content when user click 
 
 const updateStatus = () => {
   const completeTask = task.filter((task) => task.completed).length;
@@ -67,6 +76,8 @@ const updateStatus = () => {
     addConfetti();
   }
 };
+
+// update the Task
 
 const updateTask = () => {
   let taskList = document.getElementById("taskList");
@@ -96,10 +107,14 @@ const updateTask = () => {
   });
 };
 
+// adding event Listerner on Button click
+
 button.addEventListener("click", (e) => {
   e.preventDefault();
   addTask();
 });
+
+// function for confetti when all Task is Complete
 
 const addConfetti = () => {
   const duration = 15 * 1000,
